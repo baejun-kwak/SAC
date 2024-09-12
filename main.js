@@ -47,10 +47,15 @@ var getScriptPromisify = (src) => {
         this.render()
       }
   
-  
       onCustomWidgetDestroy () {
+        if (this._eChart && echarts) { echarts.dispose(this._eChart) }
+      }
   
-    }
+      setSeriesType (seriesType) {
+        this.seriesType = seriesType
+        this.dispatchEvent(new CustomEvent('propertiesChanged', { detail: { properties: { seriesType } } }))
+        this.render()
+      }
   
       async render () {
         const dataBinding = this.dataBinding
@@ -62,6 +67,7 @@ var getScriptPromisify = (src) => {
         const { dimensions, measures } = parseMetadata(metadata)
         // dimension
         const categoryData = []
+  
         // measures
         const series = measures.map(measure => {
           return {
@@ -69,10 +75,11 @@ var getScriptPromisify = (src) => {
             name: measure.label,
             data: [],
             key: measure.key,
-            type: 'line',
+            type: this.seriesType || 'line',
             smooth: true
           }
         })
+  
         data.forEach(row => {
           categoryData.push(dimensions.map(dimension => {
             return row[dimension.key].label
@@ -94,5 +101,5 @@ var getScriptPromisify = (src) => {
       }
     }
   
-    customElements.define('com-sap-sac-exercise-04kbj-main', Main)
-  })()  
+    customElements.define('com-sap-sac-exercise-05kbj-main', Main)
+  })()
