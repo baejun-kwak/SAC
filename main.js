@@ -32,6 +32,6 @@
     }
         
 
-    customElements.define('com-sap-sac-exercise-01kbj-main', Main)
+    customElements.define('com-sap-sac-exercise-03kbj-main', Main)
 
 })()
