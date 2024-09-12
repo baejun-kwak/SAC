@@ -37,6 +37,7 @@ var getScriptPromisify = (src) => {
         this._root = this._shadowRoot.getElementById('root')
   
         this._eChart = null
+        this._selectedDataPoint = {}
       }
   
       onCustomWidgetResize (width, height) {
@@ -55,6 +56,10 @@ var getScriptPromisify = (src) => {
         this.seriesType = seriesType
         this.dispatchEvent(new CustomEvent('propertiesChanged', { detail: { properties: { seriesType } } }))
         this.render()
+      }
+  
+      getSelectedDataPoint () {
+        return this._selectedDataPoint
       }
   
       async render () {
@@ -98,8 +103,14 @@ var getScriptPromisify = (src) => {
           series
         }
         eChart.setOption(option)
+        eChart.on('click', (params) => {
+          // https://echarts.apache.org/en/api.html#events.Mouse%20events
+          const { seriesIndex, seriesName, dataIndex, data, name } = params
+          this._selectedDataPoint = { seriesIndex, seriesName, dataIndex, data, name }
+          this.dispatchEvent(new Event('onClick'))
+        })
       }
     }
   
-    customElements.define('com-sap-sac-exercise-05kbj-main', Main)
+    customElements.define('com-sap-sac-exercise-08kbj-main', Main)
   })()
