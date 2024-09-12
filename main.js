@@ -17,6 +17,6 @@
       }
     }
 
-    customElements.define('com-sap-sac-exercise-00kbj-main', Main)
+    customElements.define('com-sap-sac-exercise-01kbj-main', Main)
 
 })()
