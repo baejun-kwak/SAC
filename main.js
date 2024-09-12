@@ -28,7 +28,7 @@
             if(!dataBinding || dataBinding.state !== 'success') {
                 return
         }
-            this._root.textContext = JSON.sstringify(dataBinding)
+            this._root.textContext = JSON.stringify(dataBinding)
     }
         
 
