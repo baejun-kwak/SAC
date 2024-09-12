@@ -23,7 +23,7 @@
         onCustomWidgetDestroy() {
         }
         render() {
-            this_root.textContent = 'Hello HIHIHIHIHIHIHI clientWidth: ${this.clientWidth, clientHeight: ${this.clientHeight}'
+            this_root.textContent = 'Hello HIHIHIHIHIHIHI clientWidth: ${this.clientWidth}, clientHeight: ${this.clientHeight}'
         }
     }
         
