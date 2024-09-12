@@ -1,8 +1,8 @@
 (function () {
     const template = document.createElement('template')
     template.innerHTML = `
-        < style >
-        </style >
+        <style>
+        </style>
         <div id="root" style="width: 100%; height: 100%;">
             Hello HIHIHIHIHIHIHI
         </div>
