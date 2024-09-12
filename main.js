@@ -1,6 +1,7 @@
 (function () {
     const template = document.createElement('template')
-    template.innerHTML = `< styte >
+    template.innerHTML = `
+        < style >
         </style >
         <div id="root" style="width: 100%; height: 100%;">
             Hello HIHIHIHIHIHIHI
