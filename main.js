@@ -3,7 +3,7 @@
     template.innerHTML = `< styte >
         </style >
         <div id="root" style="width: 100%; height: 100%;">
-            Hello Custom Widget
+            Hello HIHIHIHIHIHIHI
         </div>
     `
     class Main extends HTMLElement {
@@ -16,6 +16,6 @@
         }
     }
 
-    customElements.define('com-sap-sac-exercise-xxx-main', Main)
+    customElements.define('com-sap-sac-exercise-01kbj-main', Main)
 
 })()
