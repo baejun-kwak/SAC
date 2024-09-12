@@ -15,7 +15,18 @@
             this._shadowRoot.appendChild(template.content.cloneNode(true))
             this._root = this._shadowRoot.getElementById('root')
         }
+        onCustomWidgetResize (width, height) {
+            this.render()
+        }
+        onCustomWidgetAfterUpdate(changedProps) {
+        }
+        onCustomWidgetDestroy() {
+        }
+        render() {
+            this_root.textContent = 'Hello HIHIHIHIHIHIHI clientWidth: ${this.clientWidth, clientHeight: ${this.clientHeight}'
+        }
     }
+        
 
     customElements.define('com-sap-sac-exercise-01kbj-main', Main)
 
